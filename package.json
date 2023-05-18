@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "d3-graphviz": "^5.0.2",
+    "esprima": "^4.0.1",
+    "graphviz": "^0.0.9",
+    "node-graphviz": "^0.1.1"
+  }
+}
