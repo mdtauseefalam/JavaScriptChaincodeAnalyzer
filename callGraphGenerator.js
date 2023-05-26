@@ -5,7 +5,8 @@ const { graphviz } = require('node-graphviz');
 
 
 const fileName = process.argv[2];
-const cmd = `npx google-closure-compiler --js ${fileName} --print_ast > ASTOutputGraph\\FabCar.dot`;
+const nameOutput = process.argv[3]; // for naming the output files
+const cmd = `npx google-closure-compiler --js ${fileName} --print_ast > ASTOutputGraph\\${nameOutput}.dot`;
 
 let count = 0;
 const callGraph = {};
@@ -186,7 +187,7 @@ function createDotFile(callGraph){
     console.log(temp);
     graphviz.circo(temp, 'svg').then((svg) => {
       // Write the SVG to file
-      fs.writeFileSync('OutputGraph/FabCarGraph.svg', svg);
+      fs.writeFileSync(`OutputGraph/${nameOutput}Graph.svg`, svg);
     });
 }
 
